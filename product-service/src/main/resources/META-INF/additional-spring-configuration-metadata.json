@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "installment-service.url",
+  "type": "java.lang.String",
+  "description": "Url to access the service'"
+}]}
