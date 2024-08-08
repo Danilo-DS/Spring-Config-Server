@@ -1,0 +1,87 @@
+# Server Port
+server:
+  port: 8888
+
+# Applicatin Name
+
+spring:
+  application:
+    name: config-server
+  rabbitmq:
+    addresses: amqp://localhost:5672
+    username: user
+    password: admin
+  cloud:
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+      destination: test
+    config: 
+      server:
+        git:
+          default-label: config-server # Specify branch 
+          uri: https://github.com/Danilo-DS/config-servers # Url of the repository
+          username: ${GIT_USER}
+          password: ${GIT_TOKEN}
+          clone-on-start: true
+          basedir: ${user.dir}/src/main/resource/backup
+          search-paths:
+          - installment-service
+          - product-service
+    stream:
+      default-binder: rabbit
+      bindings:
+        config-server-out-0:
+          destination: test
+          content-type: application/json
+#      binders:
+#        rabbit:
+#          type: rabbit
+#          environment:
+#            spring:
+#              rabbitmq:
+#                addresses: amqp://localhost:5672
+#                username: user
+#                password: admin
+      
+     # Config binder to SQS
+#      sqs:
+#        bindings:
+#          config-server-in-0:
+#            consumer:
+#              snsFanout: false 
+#      bindings:
+#        config-server-in-0:
+#          destination: config-server-profiles
+#          content-type: application/json
+#        config-server-out-0:
+#          destination: config-server-profiles
+#          content-type: application/json
+
+#cloud:
+#  aws:
+#    credentials:
+#      access-key: ${aws.credentials.key}
+#      secret-key: ${aws.credentials.secret}
+#    region:
+#      static: us-east-1
+#    stack:
+#      auto: false
+#    sns:
+#      enabled: false   
+
+rabbitmq:
+  queue:
+    name: config-server-queue
+  exchange:
+    name: config-server-exchange
+  binding:
+    key: config-server-key
+
+# Enable endpoint /busrefresh  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: busrefresh

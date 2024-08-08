@@ -1,0 +1,52 @@
+{"properties": [
+  {
+    "name": "aws.credentials.key",
+    "type": "java.lang.String",
+    "description": "AWS Key Access"
+  },
+  {
+    "name": "aws.credentials.secret",
+    "type": "java.lang.String",
+    "description": "AWS Secret Access'"
+  },
+  {
+    "name": "spring.cloud.stream.sqs.bindings.config-server-in-0.producer.sns-fanout",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.cloud.stream.sqs.bindings.config-server-in-0.producer.sns-fanout'"
+  },
+  {
+    "name": "spring.cloud.stream.sqs.bindings.config-server-out-0.consumer.sns-fanout",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.cloud.stream.sqs.bindings.config-server-out-0.consumer.sns-fanout'"
+  },
+  {
+    "name": "spring.cloud.stream.sqs.bindings.config-server-out-0.producer.sns-fanout",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.cloud.stream.sqs.bindings.config-server-out-0.producer.sns-fanout'"
+  },
+  {
+    "name": "spring.cloud.stream.sqs.bindings.config-server-in-0.consumer.sns-fanout",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.cloud.stream.sqs.bindings.config-server-in-0.consumer.sns-fanout'"
+  },
+  {
+    "name": "spring.cloud.stream.sqs.bindings.config-server-in-0.consumer.sns-fanout",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.cloud.stream.sqs.bindings.config-server-in-0.consumer.sns-fanout'"
+  },
+  {
+    "name": "rabbitmq.queue.name",
+    "type": "java.lang.String",
+    "description": "A description for 'rabbitmq.queue.name'"
+  },
+  {
+    "name": "rabbitmq.exchange.name",
+    "type": "java.lang.String",
+    "description": "A description for 'rabbitmq.exchange.name'"
+  },
+  {
+    "name": "rabbitmq.binding.key",
+    "type": "java.lang.String",
+    "description": "A description for 'rabbitmq.binding.key'"
+  }
+]}
