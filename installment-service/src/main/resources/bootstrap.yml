@@ -1,0 +1,43 @@
+# Config Name Application
+spring:
+  application:
+    name: installment-service
+# Config for access server config
+  cloud:
+#    bus:
+#      enabled: true
+#      trace:
+#        enabled: true
+#      destination: config-server-profiles
+#      content-type: application/json
+    config:
+      uri: http://localhost:8888
+#    stream: Config binding sqs
+#      bindings:
+#        config-client-in-0:
+#          destination: config-server-profiles
+#          binder: sqs
+#      sqs:
+#        bindings:
+#          config-client-in-0:
+#            consumer:
+#              snsFanout: false
+
+# Aws credentials
+#cloud:
+#  aws:
+#    credentials:
+#      access-key: ${aws.credentials.key}
+#      secret-key: ${aws.credentials.secret}
+#    region:
+#      static: us-east-1
+#    stack:
+#      auto: false
+
+# Config to expose actuator endpoint's 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,bus-refresh
+    
