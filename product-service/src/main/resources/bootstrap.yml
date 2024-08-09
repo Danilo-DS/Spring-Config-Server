@@ -1,38 +1,20 @@
+# Server Port
+server:
+  port: 8080
+
 # Config Name Application
 spring:
   application:
     name: product-service
-# Config for access server config
   cloud:
-#    bus:
-#      enabled: true
-#      trace:
-#        enabled: true
-#      destination: config-server-profiles
-#      content-type: application/json
-    config:
+    bus: # Config integration RabbitMQ to refresh distribuited
+      enabled: true
+      trace:
+        enabled: true
+      destination: config-server-queue
+    config: # Config for access server config
       uri: http://localhost:8888
-#    stream: Config binding sqs
-#      bindings:
-#        config-client-in-0:
-#          destination: config-server-profiles
-#          binder: sqs
-#      sqs:
-#        bindings:
-#          config-client-in-0:
-#            consumer:
-#              snsFanout: false
 
-# Aws credentials
-#cloud:
-#  aws:
-#    credentials:
-#      access-key: ${aws.credentials.key}
-#      secret-key: ${aws.credentials.secret}
-#    region:
-#      static: us-east-1
-#    stack:
-#      auto: false
 
 # Config to expose actuator endpoint's 
 management:

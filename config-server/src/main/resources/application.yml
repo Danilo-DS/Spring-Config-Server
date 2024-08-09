@@ -9,14 +9,14 @@ spring:
     name: config-server
   rabbitmq:
     addresses: amqp://localhost:5672
-    username: user
-    password: admin
+    username: guest
+    password: guest
   cloud:
     bus:
       enabled: true
       trace:
         enabled: true
-      destination: test
+      destination: ${rabbitmq.queue.name}
     config: 
       server:
         git:
@@ -29,23 +29,8 @@ spring:
           search-paths:
           - installment-service
           - product-service
-    stream:
-      default-binder: rabbit
-      bindings:
-        config-server-out-0:
-          destination: test
-          content-type: application/json
-#      binders:
-#        rabbit:
-#          type: rabbit
-#          environment:
-#            spring:
-#              rabbitmq:
-#                addresses: amqp://localhost:5672
-#                username: user
-#                password: admin
       
-     # Config binder to SQS
+# Config binder to SQS
 #      sqs:
 #        bindings:
 #          config-server-in-0:

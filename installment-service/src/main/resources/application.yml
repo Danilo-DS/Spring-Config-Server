@@ -1,14 +1,14 @@
-# Application Name
-spring:
-  application:
-    name: installment-service
-    
-# Server Port
-server:
-  port: 8090
-# Root Path Config  
-  servlet:
-    context-path: /installment-service
-
-# Installment Rate Percentage
-rate-installment: 1.82
+## Application Name
+#spring:
+#  application:
+#    name: installment-service
+#    
+## Server Port
+#server:
+#  port: 8090
+## Root Path Config  
+#  servlet:
+#    context-path: /installment-service
+#
+## Installment Rate Percentage
+#rate-installment: 1.82
