@@ -1,6 +1,6 @@
 # Spring-Config-Server
 
-### Diagrams (Link)[https://drive.google.com/file/d/1JPuDmRJ0Hn4YmiVrhVV04cCjVGA0erFO/view?usp=sharing)
+### Diagrams [Link](https://drive.google.com/file/d/1JPuDmRJ0Hn4YmiVrhVV04cCjVGA0erFO/view?usp=sharing)
 
 ### Application Setup
 
